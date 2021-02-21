@@ -4,11 +4,8 @@ const prisma = new PrismaClient()
 
 // A `main` function so that you can use async/await
 async function main() {
-  const post = await prisma.post.update({
-    where: { id: 2 },
-    data: { published: true },
-  })
-  console.log(post)
+  const profile = await prisma.user.findMany()
+  console.log(profile)
 }
 
 main()
